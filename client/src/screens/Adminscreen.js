@@ -9,6 +9,7 @@ const { TabPane } = Tabs;
 
 function Adminscreen() {
     useEffect(() => {
+        console.log("JSOON", JSON.parse(localStorage.getItem('currentuser')).isAdmin);
         if (!JSON.parse(localStorage.getItem('currentuser')).isAdmin) {
             window.location.href = '/home';
         }

@@ -1,6 +1,8 @@
 import React from "react";
+// import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
+  // const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("currentuser"));
   function logout() {
     localStorage.removeItem('currentuser');
@@ -28,6 +30,18 @@ function Navbar() {
               {user ? (
                 <>
                   {/* <h1 style={{color:'white'}}>{user.name}</h1> */}
+                  <a className="navbar-brand" href="/home">
+                  <button
+                      className="btn btn-primary"
+                      type="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      >
+                      Back
+                    </button>
+                      </a>
+
+
                   <div className="dropdown">
                     <button
                       className="btn btn-secondary dropdown-toggle"

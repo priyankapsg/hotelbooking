@@ -109,7 +109,8 @@ function Homescreen() {
       <select className="form-control" value={type} onChange={(e)=>{ filterByType(e.target.value)}}>
           <option value="all">All</option>
           <option value="delux">Delux</option>
-          <option value="non-delux">Non-Delux</option>
+          <option value="non_delux">Non-Delux</option>
+          <option value="party_hall">Party-Hall</option>
         </select>
       </div>
       </div>

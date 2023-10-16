@@ -19,9 +19,12 @@ function Loginscreen() {
         setloading(true);
         const result = (await axios.post('/api/user/login', user)).data;
         setloading(false);
-
         localStorage.setItem('currentuser', JSON.stringify(result));
-        window.location.href = '/home'
+        if(result.isAdmin === true){
+          window.location.href = '/admin'
+        } else {
+          window.location.href = '/home'
+        }
 
       }
      catch (error) {
