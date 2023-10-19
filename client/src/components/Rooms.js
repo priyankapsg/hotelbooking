@@ -36,6 +36,7 @@ const Rooms = () => {
                             <tr>
                                 <th scope="col">Room Id</th>
                                 <th scope="col">Name</th>
+                                <th scope="col">Location</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Rent per day</th>
                                 <th scope="col">Max count</th>
@@ -47,6 +48,7 @@ const Rooms = () => {
                                 return <tr>
                                     <td scope="row">{room._id}</td>
                                     <td>{room.name}</td>
+                                    <td>{room.location}</td>
                                     <td>{room.type}</td>
                                     <td>{room.rentperday}</td>
                                     <td>{room.maxcount}</td>

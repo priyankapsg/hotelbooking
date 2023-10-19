@@ -18,6 +18,7 @@ function Homescreen() {
   const [todate , settodate] = useState();
   const [duplicaterooms , setduplicaterooms] = useState([]);
   const [searchkey,setsearchkey] = useState('');
+  const [searchCity,setSearchCity] = useState('');
   const [type,settype] = useState('all')
   const dispatch = useDispatch()
 
@@ -80,6 +81,11 @@ function Homescreen() {
     setrooms(temprooms);
   }
 
+  function filterByCity(){
+    const temprooms = duplicaterooms.filter(room=>room.location.toLowerCase().includes(searchCity.toLowerCase()))
+    setrooms(temprooms);
+  }
+
   function filterByType(e) {
 
     settype(e);
@@ -103,6 +109,11 @@ function Homescreen() {
         <div className="col-md-5">
           <input type="text" className="form-control" placeholder="Search Room" 
           value={searchkey} onChange={(e)=>{ setsearchkey(e.target.value) }} onKeyUp={filterBySearch} />
+        </div>
+
+        <div className="col-md-5">
+          <input type="text" className="form-control" placeholder="Search Location" 
+          value={searchCity} onChange={(e)=>{ setSearchCity(e.target.value) }} onKeyUp={filterByCity} />
         </div>
 
       <div className="col-md-3">

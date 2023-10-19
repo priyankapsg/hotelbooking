@@ -11,6 +11,7 @@ const Addroom = () => {
     const [maxcount, setmaxcount] = useState([])
     const [description, setdescription] = useState([])
     const [phonenumber, setphonenumber] = useState([])
+    const [location, setLocation] = useState([])
     const [type, settype] = useState([])
     const [imageurl1, setimageurl1] = useState([])
     const [imageurl2, setimageurl2] = useState([])
@@ -40,6 +41,7 @@ const Addroom = () => {
             maxcount,
             description,
             phonenumber,
+            location,
             type,
             imageurls:[imageurl1,imageurl2,imageurl3]
         }
@@ -88,6 +90,9 @@ const Addroom = () => {
                 </div>
                 <div className="col-md-5">
 
+                    <div className="form-group">
+                    <input type="text" classaName="form-control"  placeholder="Location" value={location} onChange={(e)=>{setLocation(e.target.value)}} />
+                    </div>
                     <div className="form-group">
                     <input type="text" classaName="form-control"  placeholder="Type" value={type} onChange={(e)=>{settype(e.target.value)}} />
                     </div>
