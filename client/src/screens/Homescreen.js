@@ -95,8 +95,8 @@ function Homescreen() {
   return (
     <div className="container">
 
-      <div className="row mt-5 bs">
-        <div className="col-md-3">
+      <div className="row mt-5 booking-container">
+        <div className="col-md-5">
           <RangePicker format='DD-MM-YYYY' onChange={filterByDate} />
         </div>
 

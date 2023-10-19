@@ -16,7 +16,7 @@ function Adminscreen() {
     }, [])
     
     return (
-        <div className='mt-3 ml-3 mr-3 bs'>
+        <div className='admin-panel'>
             <h2 className='text-center' style={{fontSize:'30px'}}><b>Admin Panel</b></h2>
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Bookings" key="1">

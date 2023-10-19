@@ -2,93 +2,350 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Nunito', sans-serif !important;
+  /* background: linear-gradient(45deg, #a91a1a, #710c58, #351cb3); */
+  /* background-color: #f5f0f0;
+  background-size: 200% 200%;
+  animation: gradientAnimation 8s ease infinite; */
+  background-image: url('https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=1060&t=st=1697549855~exp=1697550455~hmac=a21aaa0454dd49deb2996b870cde8ee17124129acb0f5b10bad8618ab36871e4'); /* Replace with your background image */
+  background-size: cover;
+  background-blur: 10px;
+}
+.bg::before {
+  content: '';
+  background: rgba(255, 255, 255, 0.1); /* Adjust the opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Apply the glassmorphism effect */
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Courier New', monospace;
 }
 
-.navbar{
-  background-color: black;
+.navbar {
+  background-color: #4d69cc; /* Dark background color */
+  color: #fff; /* White text */
 }
 
-.navbar-brand{
-  color: white !important;
+.navbar-brand {
+  color: #fff;
+  font-weight: bold;
 }
 
-.nav-link{
-  color: white !important;
+.nav-link {
+  color: #fff;
 }
 
-.navbar-nav{
-  margin-left: auto !important;
+.navbar-nav {
+  margin-left: auto;
 }
 
-.smallimg{
-  height: 200px;
-  width: 100%  !important;
-  border-radius: 5px !important;
+.smallimg {
+  max-width: 100%;
+  border-radius: 5px;
 }
 
-h1{
-  font-size: 20px;
+h1 {
+  font-size: 24px;
 }
 
-.btn{
-  background-color: black !important;
-  color: white !important;
-  box-shadow: none !important;
+.btn {
+  background-color: #333; /* Dark background color */
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
-.bs{
-  box-shadow: rgb(0, 0, 0.35) 0px 5px 15px;
-  border-radius: 5px !important;
-  padding: 20px !important;
-  margin-top: 20px !important;
+
+/* Apply styles to the entire form container */
+.bs {
+  background: rgba(255, 255, 255, 0.8); /* Light background with slight transparency */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.bigimg{
-  height: 400px !important;
-  border-radius: 5px !important;
+/* Style the form header */
+.bs h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.bigimgs{
-  height: 371px !important;
-  border-radius: 5px !important;
+/* Style the input fields */
+.bs input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #3498db; /* Blue border */
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border-color 0.3s;
 }
 
-input , select , .ant-picker{
-  box-shadow: none !important;
-  border: 2px solid black !important;
-  margin-top: 10px;
+.bs input[type="text"]:focus {
+  border-color: #e74c3c; /* Red border on focus */
 }
 
-input{
-  width: 100% !important;
+/* Style the registration button */
+.bs button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff; /* Blue button background color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-h2{
+.bs button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Add some margin to the registration button for spacing */
+.bs button.mt-3 {
+  margin-top: 15px;
+}
+.success-message {
+  background-color: rgba(76, 175, 80, 0.4); /* Adjust the background color and opacity */
+  color: #fff;
+  font-size: 16px;
+  margin-top: 15px;
   padding: 10px;
-  font-size: 30px ;
+  border-radius: 5px;
+}
+
+/* Style for error message */
+.error-message {
+  background-color: rgba(244, 67, 54, 0.4); /* Adjust the background color and opacity */
+  color: #fff;
+  font-size: 16px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+/* Apply styles to the entire admin panel container */
+.admin-panel {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the admin panel header */
+.admin-panel h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the Tabs component */
+.ant-tabs {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Style the tab titles */
+.ant-tabs-tab {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Style the active tab title */
+.ant-tabs-tab-active {
+  color: #007bff; /* Blue color for active tab */
+}
+
+/* Style the tab content container */
+.ant-tabs-content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+/* Style the tab content */
+.ant-tabs-tabpane {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Style the content inside the Tabs */
+.ant-tabs-tabpane > div {
+  padding: 10px;
+}
+
+/* Add some margin to the entire admin panel for spacing */
+.admin-panel {
+  margin: 20px;
+}
+
+
+
+.bigimg {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.bigimgs {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+input,
+select,
+.ant-picker {
+  border: 2px solid #333;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+h2 {
+  padding: 10px;
+  font-size: 36px; /* Larger font size */
   font-weight: bold;
   text-align: center;
 }
 
-.landing{
-  background-color: black !important;
+
+.landing {
+  background: linear-gradient(135deg, #f06, #9f3), url('https://img.freepik.com/free-photo/soft-vintage-gradient-blur-background-with-pastel-colored-well-use-as-studio-room-product-presentation-banner_1258-102199.jpg?w=740&t=st=1697553240~exp=1697553840~hmac=9bb485d860db48ca7826b378c23ee2dd5e203a732dcd81278111d31975464003') center/cover no-repeat;
+  color: #fff;
   height: 100vh;
-  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
-.landingbtn{
-  background-color: white !important;
-  color: black !important;
-  margin-top: 20px;
+.landing h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.landing p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.landingbtn {
+  background: linear-gradient(45deg, #ff6b5e, #f4d35e);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.landingbtn:hover {
+  background: linear-gradient(45deg, #f4d35e, #ff6b5e);
+}
+
+.landing .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.booking-container {
+  background-color: #f5f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+
+.booking-container h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.booking-container img.bigimgs {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.booking-container .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 20px 30px;
+  transition: background-color 0.3s;
+}
+
+.booking-container .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.booking-container hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.booking-container p {
+  margin: 5px 0;
+}
+
+.booking-container b {
+  font-weight: bold;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+
+

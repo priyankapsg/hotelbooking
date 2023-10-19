@@ -56,7 +56,7 @@ function Bookingscreen({match}) {
   return (
     <div className='m-5' data-aos="flip-left">
       {loading ? (<h1><Loader/></h1>) : room ? (<div>
-        <div className="row justify-content-center my-3 bs">
+        <div className="row justify-content-center my-3 booking-container">
             <div className="col-md-6 my-2">
                 <h1>{room.name}</h1>
                 <img src={room.imageurls[0]} alt="something" className='bigimgs'/>
