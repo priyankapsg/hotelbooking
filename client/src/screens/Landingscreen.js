@@ -13,11 +13,16 @@ const Landingscreen = () => {
         <div className="col-md-12 text-center">
         <h2 data-aos='zoom-in' style={{color:'white',fontSize:'100px'}}>PR BOOKINGS</h2>
         <h1 data-aos='zoom-out' style={{color:'white'}}>"There is only one boss.The Guest!"</h1>
-
+        <div style={{ margin: '40px 0' }}>
+        <h2 data-aos='zoom-out' style={{color:'white', fontFamily:'sans-serif', fontSize:'30px'}}>"Exclusive Limited-Time Offer! 🌟 Book Your Stay Now and Save Big!"</h2>
+        </div>
+        <div style={{ margin: '110px 0' }}>
         <Link to='/home'>
             <button className='btn landingbtn' style={{color:'black'}}>Get Started</button>
         </Link>
-
+        
+       
+        </div>
         </div>
     </div>
   )
