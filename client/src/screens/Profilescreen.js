@@ -16,7 +16,7 @@ function Profilescreen() {
     }, [])
     
     return (
-        <div className='ml-3 mt-3'>
+        <div className='ml-3 mt-3'style={{ textAlign: 'left' }}>
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Profile" key="1">
                     <p>My Profile</p>

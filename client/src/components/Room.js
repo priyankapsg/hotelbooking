@@ -14,9 +14,9 @@ function Room({ room , fromdate , todate}) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className="row p-3 m-2 bs" data-aos="fade-up">
+    <div className="row p-3 m-2 bsi" data-aos="fade-up">
       <div className="col-md-4">
-        <img src={room.imageurls[0]} alt="something" className="smallimg" />
+        <img src={room.imageurls[0]} alt="something" className="smallimgg" />
       </div>
       <div className="col-md-7">
         <h1>{room.name}</h1>
@@ -40,7 +40,7 @@ function Room({ room , fromdate , todate}) {
       </div>
 
       <Modal show={show} onHide={handleClose} size="lg">
-        <Modal.Header>
+        <Modal.Header  className="modal-header">
           <Modal.Title>{room.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -48,14 +48,14 @@ function Room({ room , fromdate , todate}) {
             {room.imageurls.map(url=>{
                 return <Carousel.Item>
                 <img
-                  className="d-block w-100 bigimg"
+                  className="d-block w-100 bigimgg"
                   src={url}
                   alt="slides"
                 />
               </Carousel.Item>;
             })}
           </Carousel>
-          <p>{room.description}</p>
+          <p className="modal-description">{room.description}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

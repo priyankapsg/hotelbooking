@@ -40,17 +40,30 @@ code {
 }
 
 .navbar {
-  background-color: #4d69cc; /* Dark background color */
+  /* background-color: #4d69cc;  */
+  background: linear-gradient(135deg, #f06, #9f3);
   color: #fff; /* White text */
 }
 
 .navbar-brand {
-  color: #fff;
+  color: #e5e9ea;
   font-weight: bold;
 }
 
+/* .nav-link {
+  color: #e8eeee;
+
+} */
 .nav-link {
-  color: #fff;
+  color: #e8eaec; /* Change the text color to a bright blue */
+  text-decoration: none; /* Remove the default underline */
+  font-weight: bold; /* Make the text bold */
+  transition: color 0.3s; /* Add a smooth color transition on hover */
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: #ff5722; /* Change the color on hover to a different color */
 }
 
 .navbar-nav {
@@ -316,7 +329,7 @@ h2 {
 }
 
 .booking-container .btn-primary {
-  background-color: #007bff;
+  background-color: #1bb1e4;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -332,7 +345,7 @@ h2 {
 
 .booking-container hr {
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 2px solid #ccc;
 }
 
 .booking-container p {
@@ -347,5 +360,75 @@ h2 {
   margin: 5rem;
 }
 
+/* Add these styles to your Homescreen.css or a separate CSS file */
+/* Add your global CSS styles here */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+.booking-container {
+  justify-content: space-between;
+}
+
+.booking-container .col-md-5,
+.booking-container .col-md-3 {
+  margin-top: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0;
+}
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.25rem + 7px);
+}
+
+.booking-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Add more specific styles if needed */
+
+.bsi {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.smallimgg {
+  width: auto;
+  max-height: 200px;
+  object-fit:cover;
+  border-radius: 5px;
+}
+
+.bigimgg {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+/* Styling for the Modal dialog */
+.modal-header {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.modal-description {
+  font-size: 16px;
+  margin-top: 20px;
+}
 

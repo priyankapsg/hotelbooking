@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand" href="/home">
+          <a className="navbar-brand" href="/">
             PR BOOKINGS
           </a>
           <button
@@ -74,12 +74,12 @@ function Navbar() {
                       aria-current="page"
                       href="/register"
                     >
-                      Register
+                      REGISTER
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="/login">
-                      Login
+                      LOGIN
                     </a>
                   </li>
                 </>

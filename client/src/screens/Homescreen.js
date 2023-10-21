@@ -116,7 +116,7 @@ function Homescreen() {
           value={searchCity} onChange={(e)=>{ setSearchCity(e.target.value) }} onKeyUp={filterByCity} />
         </div>
 
-      <div className="col-md-3">
+      <div className="col-md-5">
       <select className="form-control" value={type} onChange={(e)=>{ filterByType(e.target.value)}}>
           <option value="all">All</option>
           <option value="delux">Delux</option>
@@ -128,12 +128,12 @@ function Homescreen() {
 
 
 
-      <div className="row justify-content-center mt-5">
+      <div className="row justify-content-center mt-5 ">
         {loading ? (
           <Loader/>
         ) : (
           rooms.map((room) => {
-            return  <div className="col-md-9 mt-2 mb-4" >
+            return  <div className="col-md-9 mt-2 mb-4 " >
               <Room room={room} fromdate={formdate} todate={todate} />
             </div>;
         }) 
