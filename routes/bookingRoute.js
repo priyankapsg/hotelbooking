@@ -15,17 +15,17 @@ const customer  = await stripe.customers.create({
     source: token.id
 })
 
-const payment = await stripe.charges.create({
-    amount: totalamount * 100,
-    customer: customer.id,
-    currency: 'inr',
-    receipt_email: token.email
-    },
-    {
-     idempotencyKey : uuidv4()
-    })
+// const payment = await stripe.charges.create({
+//     amount: totalamount * 100,
+//     customer: customer.id,
+//     currency: 'usd',
+//     receipt_email: token.email
+//     },
+//     {
+//      idempotencyKey : uuidv4()
+//     })
 
-if(payment){
+if(customer){
         const newbooking = new Booking({
             room: room.name,
             roomid: room._id,
@@ -41,6 +41,7 @@ if(payment){
         const roomtemp = await Room.findOne({_id:room._id});
         roomtemp.currentbookings.push({bookingid:booking._id, fromdate: fromdate, todate:todate,userid:userid,status:booking.status})
         await roomtemp.save();
+        
         res.send('Payment successful, your room booking is confirmed.')
 }
 
