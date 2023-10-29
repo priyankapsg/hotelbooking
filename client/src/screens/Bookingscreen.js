@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import moment from 'moment';
+import StripeCheckout from 'react-stripe-checkout';
 
 function Bookingscreen({match}) {
     const [room, setroom] = useState();
@@ -43,7 +44,8 @@ function Bookingscreen({match}) {
         fromdate,
         todate,
         totalamount,
-        totaldays
+        totaldays,
+        
       }
 
       try {
@@ -53,6 +55,26 @@ function Bookingscreen({match}) {
       }
     };
 
+
+    async function onToken(token){
+    console.log(token);
+    const bookingDetail ={
+      room,
+      userid:JSON.parse(localStorage.getItem('currentuser'))._id,
+      fromdate,
+      todate,
+      totalamount,
+      totaldays,
+      token
+      
+    }
+
+    try {
+      const result = await axios.post('/api/bookings/bookroom',bookingDetail)
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className='m-5' data-aos="flip-left">
       {loading ? (<h1><Loader/></h1>) : room ? (<div>
@@ -82,7 +104,19 @@ function Bookingscreen({match}) {
                   </b>
                 </div>
                 <div style={{float : 'right'}}>
-                <button className='btn btn-primary' onClick={bookRoom}>Pay now</button>
+              
+                
+                <StripeCheckout
+                amount={totalamount * 100}
+        token={onToken}
+        currency='INR'
+        stripeKey="pk_test_51O6ZReSE0UrCVwmmQoCk1R5ZHM3AE7F1xa59zF3R4dDdlG3ylNDhja83CFVCVt4IDHR2ipAifPWHgV0CZ8CG8TQi00sCgv5koz"
+      >
+        <button className='btn btn-primary' onClick={bookRoom}>Pay now</button>
+        </StripeCheckout>
+                
+                         
+      
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ const Landingscreen = () => {
   return (
     <div className='row landing'>
         <div className="col-md-12 text-center">
-        <h2 data-aos='zoom-in' style={{color:'white',fontSize:'100px'}}>PR BOOKINGS</h2>
+        <h2 data-aos='zoom-in' style={{color:'white',fontSize:'100px'}}>PANDA BOOKINGS</h2>
         <h1 data-aos='zoom-out' style={{color:'white'}}>"There is only one boss.The Guest!"</h1>
         <div style={{ margin: '40px 0' }}>
         <h2 data-aos='zoom-out' style={{color:'white', fontFamily:'sans-serif', fontSize:'30px'}}>"Exclusive Limited-Time Offer! 🌟 Book Your Stay Now and Save Big!"</h2>
